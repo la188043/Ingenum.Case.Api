@@ -1,4 +1,6 @@
-﻿namespace Ingenum.Case.Infrastructure.Services
+﻿using System.Threading.Tasks;
+
+namespace Ingenum.Case.Infrastructure.Services
 {
     using AutoMapper;
 
@@ -11,6 +13,11 @@
     {
         public TodoTaskService(ITodoTaskRepository todoTaskRepository, IMapper mapper) : base(todoTaskRepository, mapper)
         {
+        }
+
+        public async Task<bool> UpdateTableAsync(string taskId, string newTableId)
+        {
+            return await repository.UpdateTableAsync(taskId, newTableId);
         }
     }
 }
