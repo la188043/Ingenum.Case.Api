@@ -86,6 +86,8 @@
             return updatedTodoTask != null ? this.NoContent() : this.UnprocessableEntity() as IActionResult;
         }
 
+        [HttpPut]
+        [Route("move/{id}")]
         public async Task<IActionResult> UpdateTable(string id, UpdateTodoTaskTableDto todoTask)
         {
             var table = await tableService.GetByIdAsync(todoTask.TableId);
