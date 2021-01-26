@@ -12,10 +12,12 @@
     public class TodoTasksController : ControllerBase
     {
         private readonly ITodoTaskService todoTaskService;
+        private readonly ITableService tableService;
 
-        public TodoTasksController(ITodoTaskService todoTaskService)
+        public TodoTasksController(ITodoTaskService todoTaskService, ITableService tableService)
         {
             this.todoTaskService = todoTaskService;
+            this.tableService = tableService;
         }
 
         [HttpGet]
@@ -82,6 +84,21 @@
             var updatedTodoTask = await this.todoTaskService.UpdateAsync(id, newTodoTask);
 
             return updatedTodoTask != null ? this.NoContent() : this.UnprocessableEntity() as IActionResult;
+        }
+
+        public async Task<IActionResult> UpdateTable(string id, UpdateTodoTaskTableDto todoTask)
+        {
+            var table = await tableService.GetByIdAsync(todoTask.TableId);
+            var task = await todoTaskService.GetByIdAsync(id);
+
+            if (table == null || task == null)
+            {
+                return this.NotFound();
+            }
+
+            var response = await todoTaskService.UpdateTableAsync(id, todoTask.TableId);
+            
+            return response  ? this.NoContent() : this.UnprocessableEntity() as IActionResult;
         }
     }
 }
