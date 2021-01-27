@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Ingenum.Case.Model.DTO
 {
-    public class AddTaskDto
+    public class AddTodoTaskDto
     {
         public string Name { get; set; }
 
