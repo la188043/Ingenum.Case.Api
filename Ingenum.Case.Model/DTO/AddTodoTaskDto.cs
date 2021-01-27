@@ -1,14 +1,12 @@
-﻿namespace Ingenum.Case.Model.Database
+﻿using System;
+namespace Ingenum.Case.Model.DTO
 {
-    using System;
-    public class Task : Entity
+    public class AddTaskDto
     {
         public string Name { get; set; }
 
         public DateTime DueDate { get; set; }
 
         public string Description { get; set; }
-
-        public TaskStatus Status { get; set; }
     }
 }

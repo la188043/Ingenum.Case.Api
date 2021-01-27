@@ -9,4 +9,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.2" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ingenum.Case.Model\Ingenum.Case.Model.csproj" />
+  </ItemGroup>
 </Project>
