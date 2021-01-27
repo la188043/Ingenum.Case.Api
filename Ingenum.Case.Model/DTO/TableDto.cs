@@ -4,6 +4,8 @@
 
     public class TableDto
     {
+        public string Name { get; set; }
+
         public IEnumerable<TodoTaskDto> Tasks { get; set; }
     }
 }

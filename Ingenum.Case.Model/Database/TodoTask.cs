@@ -1,6 +1,9 @@
 ﻿namespace Ingenum.Case.Model.Database
 {
     using System;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public class TodoTask : Entity
     {
         public string Name { get; set; }
@@ -10,5 +13,8 @@
         public string Description { get; set; }
 
         public TaskStatus Status { get; set; }
+
+        [ForeignKey(nameof(Table))]
+        public string TableId { get; set; }
     }
 }
