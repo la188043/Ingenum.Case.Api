@@ -11,5 +11,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ingenum.Case.Model\Ingenum.Case.Model.csproj" />
+    <ProjectReference Include="..\Ingenum.Case.Core\Ingenum.Case.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repository\" />
   </ItemGroup>
 </Project>

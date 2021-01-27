@@ -39,6 +39,6 @@
 
         Task<bool> Exists(Expression<Func<T, bool>> predicate);
 
-        Task<int> Cout(Expression<Func<T, bool>> predicate = null);
+        Task<int> Count(Expression<Func<T, bool>> predicate = null);
     }
 }
