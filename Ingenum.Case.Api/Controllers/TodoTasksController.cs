@@ -44,5 +44,20 @@
                 nameof(Get), new { id = createdTodoTask.Id }, createdTodoTask
                 ) : this.UnprocessableEntity() as IActionResult;
         }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(string id)
+        {
+            var todoTask = await this.todoTaskService.GetByIdAsync(id);
+
+            if (todoTask == null)
+            {
+                return this.NotFound();
+            }
+
+            var isDeleted = await this.todoTaskService.DeleteAsync(todoTask.Id);
+
+            return isDeleted ? this.Ok(isDeleted) : this.UnprocessableEntity() as IActionResult;
+        }
     }
 }

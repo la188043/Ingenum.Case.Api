@@ -24,5 +24,17 @@
 
             return this.Ok(tables);
         }
+
+        public async Task<ActionResult<TableDto>> Get(string id)
+        {
+            var table = await tableService.GetByIdAsync(id);
+
+            if (table == null)
+            {
+                return this.NotFound(id);
+            }
+
+            return this.Ok(table);
+        }
     }
 }
