@@ -18,7 +18,7 @@
         public override async Task<IEnumerable<Table>> GetAllAsync()
         {
             return await this.context.Tables
-                .Include(x => x.Tasks.Select(task => !task.IsDeleted))
+                .Include(x => x.Tasks.Where(y => !y.IsDeleted))
                 .ToListAsync();
         }
 
