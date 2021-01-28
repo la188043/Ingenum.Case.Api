@@ -14,5 +14,14 @@
         public DbSet<Table> Tables { get; set; }
 
         public DbSet<TodoTask> Tasks { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<TodoTask>()
+                .Property(x => x.IsDeleted)
+                .HasDefaultValue(false);
+        }
     }
 }

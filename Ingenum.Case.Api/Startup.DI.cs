@@ -1,10 +1,11 @@
-﻿
-namespace Ingenum.Case.Api
+﻿namespace Ingenum.Case.Api
 {
+    using Microsoft.Extensions.DependencyInjection;
+
     using Ingenum.Case.Core.Repository;
     using Ingenum.Case.Core.Services;
     using Ingenum.Case.EntityFramework.Repository;
-    using Microsoft.Extensions.DependencyInjection;
+    using Ingenum.Case.Infrastructure.Services;
 
     public partial class Startup
     {
@@ -13,8 +14,10 @@ namespace Ingenum.Case.Api
             // --  Models --
 
             services.AddScoped<ITableRepository, TableRepository>();
+            services.AddScoped<ITableService, TableService>();
 
             services.AddScoped<ITodoTaskRepository, TodoTaskRepository>();
+            services.AddScoped<ITodoTaskService, TodoTaskService>();
         }
     }
 }

@@ -12,6 +12,8 @@
 
         public string Description { get; set; }
 
+        public bool IsDeleted { get; set; }
+
         [ForeignKey(nameof(Table))]
         public string TableId { get; set; }
     }

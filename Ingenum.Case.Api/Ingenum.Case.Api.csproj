@@ -21,6 +21,9 @@
     <ProjectReference Include="..\Ingenum.Case.Model\Ingenum.Case.Model.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\Ingenum.Case.Infrastructure\Ingenum.Case.Infrastructure.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Start\" />
