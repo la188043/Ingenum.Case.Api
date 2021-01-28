@@ -40,5 +40,26 @@
 
             return this.Ok(table);
         }
+
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<IActionResult> Put(string id, TableDto newTable)
+        {
+            var todoTask = await this.tableService.GetByIdAsync(id);
+
+            if (todoTask == null)
+            {
+                return this.NotFound(id);
+            }
+
+            if (newTable == null)
+            {
+                return this.ValidationProblem();
+            }
+
+            var updatedTodoTask = await this.tableService.UpdateAsync(id, newTable);
+
+            return updatedTodoTask != null ? this.NoContent() : this.UnprocessableEntity() as IActionResult;
+        }
     }
 }

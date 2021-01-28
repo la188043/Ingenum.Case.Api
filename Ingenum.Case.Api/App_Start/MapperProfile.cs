@@ -14,17 +14,11 @@
             this.CreateMap<Table, AddTableDto>()
                 .ReverseMap();
 
-            this.CreateMap<Table, UpdateTableDto>()
-                .ReverseMap();
-
             // TodoTask Mapping
             this.CreateMap<TodoTask, TodoTaskDto>()
                 .ReverseMap();
 
             this.CreateMap<TodoTask, AddTodoTaskDto>()
-                .ReverseMap();
-
-            this.CreateMap<TodoTask, UpdateTableDto>()
                 .ReverseMap();
         }
     }
