@@ -41,6 +41,21 @@
             return this.Ok(table);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Post(AddTableDto table)
+        {
+            if (table == null)
+            {
+                return this.ValidationProblem();
+            }
+
+            var createdTable = await this.tableService.CreateAsync(table);
+
+            return createdTable != null ? this.CreatedAtAction(
+                nameof(Get), new { Id = createdTable.Id }, createdTable
+                ) : this.UnprocessableEntity() as IActionResult;
+        }
+
         [HttpPut]
         [Route("{id}")]
         public async Task<IActionResult> Put(string id, TableDto newTable)

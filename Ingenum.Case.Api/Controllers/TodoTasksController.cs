@@ -61,5 +61,26 @@
 
             return isDeleted ? this.Ok(isDeleted) : this.UnprocessableEntity() as IActionResult;
         }
+
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<IActionResult> Put(string id, TodoTaskDto newTodoTask)
+        {
+            var todoTask = await this.todoTaskService.GetByIdAsync(id);
+
+            if (todoTask == null)
+            {
+                return this.NotFound();
+            }
+
+            if (newTodoTask == null)
+            {
+                return this.ValidationProblem();
+            }
+
+            var updatedTodoTask = await this.todoTaskService.UpdateAsync(id, newTodoTask);
+
+            return updatedTodoTask != null ? this.NoContent() : this.UnprocessableEntity() as IActionResult;
+        }
     }
 }
