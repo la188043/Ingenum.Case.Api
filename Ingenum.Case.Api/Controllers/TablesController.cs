@@ -2,9 +2,11 @@
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
+
+    using Microsoft.AspNetCore.Mvc;
+
     using Ingenum.Case.Core.Services;
     using Ingenum.Case.Model.DTO;
-    using Microsoft.AspNetCore.Mvc;
 
     [Route("tables")]
     [ApiController]
@@ -25,6 +27,8 @@
             return this.Ok(tables);
         }
 
+        [HttpGet]
+        [Route("{id}")]
         public async Task<ActionResult<TableDto>> Get(string id)
         {
             var table = await tableService.GetByIdAsync(id);

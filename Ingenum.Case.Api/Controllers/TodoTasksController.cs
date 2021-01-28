@@ -1,9 +1,11 @@
 ﻿namespace Ingenum.Case.Api.Controllers
 {
     using System.Threading.Tasks;
-    using Ingenum.Case.Core.Services;
-    using Ingenum.Case.Model.DTO;
+
     using Microsoft.AspNetCore.Mvc;
+
+    using Ingenum.Case.Model.DTO;
+    using Ingenum.Case.Core.Services;
 
     [Route("tasks")]
     [ApiController]

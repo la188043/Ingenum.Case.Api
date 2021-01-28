@@ -1,8 +1,8 @@
-﻿using Ingenum.Case.Model.Database;
-using Ingenum.Case.Model.DTO;
-
-namespace Ingenum.Case.Api.App_Start
+﻿namespace Ingenum.Case.Api.App_Start
 {
+    using Ingenum.Case.Model.Database;
+    using Ingenum.Case.Model.DTO;
+
     public class MapperProfile : AutoMapper.Profile
     {
         public MapperProfile()
