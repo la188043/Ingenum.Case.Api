@@ -12,8 +12,6 @@
 
         public string Description { get; set; }
 
-        public TaskStatus Status { get; set; }
-
         [ForeignKey(nameof(Table))]
         public string TableId { get; set; }
     }
