@@ -15,6 +15,7 @@
         {
         }
 
+        // TODO Demander: Bonne façon de faire ?
         public override async Task<IEnumerable<Table>> GetAllAsync()
         {
             return await this.context.Tables
@@ -25,7 +26,7 @@
         public override async Task<Table> GetByIdAsync(string id)
         {
             return await this.context.Tables
-                .Include(x => x.Tasks.Select(y => !y.IsDeleted))
+                .Include(x => x.Tasks.Where(y => !y.IsDeleted))
                 .FirstOrDefaultAsync(x => x.Id == id);
         }
     }
