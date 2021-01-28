@@ -1,4 +1,3 @@
-
 namespace Ingenum.Case.Api
 {
     using Microsoft.AspNetCore.Builder;
