@@ -1,10 +1,11 @@
 ﻿namespace Ingenum.Case.EntityFramework.Repository
 {
-    using System;
     using System.Threading.Tasks;
+
+    using Microsoft.EntityFrameworkCore;
+
     using Ingenum.Case.Core.Repository;
     using Ingenum.Case.Model.Database;
-    using Microsoft.EntityFrameworkCore;
 
     public class TodoTaskRepository : BaseRepository<TodoTask>, ITodoTaskRepository
     {

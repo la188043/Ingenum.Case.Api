@@ -2,7 +2,9 @@
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
+
     using AutoMapper;
+
     using Ingenum.Case.Core.Repository;
     using Ingenum.Case.Core.Services;
 

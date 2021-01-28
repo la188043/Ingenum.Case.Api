@@ -1,6 +1,7 @@
-﻿using System;
-namespace Ingenum.Case.Model.DTO
+﻿namespace Ingenum.Case.Model.DTO
 {
+    using System;
+
     public class AddTodoTaskDto
     {
         public string Name { get; set; }

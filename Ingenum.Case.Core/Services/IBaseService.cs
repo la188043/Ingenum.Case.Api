@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Ingenum.Case.Core.Repository;
-
-namespace Ingenum.Case.Core.Services
+﻿namespace Ingenum.Case.Core.Services
 {
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
+    using Ingenum.Case.Core.Repository;
+
     public interface IBaseService<DtoType, AddDtoType, ModelType, TRepository>
         where DtoType : class
         where AddDtoType : class

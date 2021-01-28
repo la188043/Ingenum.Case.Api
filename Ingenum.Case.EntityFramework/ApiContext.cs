@@ -1,8 +1,8 @@
 ﻿namespace Ingenum.Case.EntityFramework
 {
-    using Ingenum.Case.Model.Database;
-
     using Microsoft.EntityFrameworkCore;
+
+    using Ingenum.Case.Model.Database;
 
     public class ApiContext : DbContext
     {

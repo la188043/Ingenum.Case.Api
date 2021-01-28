@@ -5,11 +5,12 @@
     using System.Linq;
     using System.Linq.Expressions;
     using System.Threading.Tasks;
-    using Ingenum.Case.Core.Repository;
-    using Ingenum.Case.EntityFramework.Repository;
-    using Ingenum.Case.Model.Database;
-    using Microsoft.EntityFrameworkCore.Query;
+
     using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore.Query;
+
+    using Ingenum.Case.Core.Repository;
+    using Ingenum.Case.Model.Database;
 
     public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : Entity
     {
