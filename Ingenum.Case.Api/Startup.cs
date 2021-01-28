@@ -44,7 +44,8 @@ namespace Ingenum.Case.Api
         public void Configure(IApplicationBuilder app,
             IWebHostEnvironment env,
             ApiContext context,
-            ITableRepository tableRepository)
+            ITableRepository tableRepository,
+            ITodoTaskRepository todoTaskRepository)
         {
             if (env.IsDevelopment())
             {
@@ -70,7 +71,7 @@ namespace Ingenum.Case.Api
                 endpoints.MapControllers();
             });
 
-            SeedDatabase.Initialize(context, tableRepository).Wait();
+            SeedDatabase.Initialize(context, tableRepository, todoTaskRepository).Wait();
         }
     }
 }
