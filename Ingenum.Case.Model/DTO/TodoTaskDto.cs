@@ -11,5 +11,7 @@
         public DateTime DueDate { get; set; }
 
         public string Description { get; set; }
+
+        public string TableId { get; set; }
     }
 }
