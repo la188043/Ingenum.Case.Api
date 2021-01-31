@@ -48,6 +48,7 @@
         }
 
         [HttpDelete]
+        [Route("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
             var todoTask = await this.todoTaskService.GetByIdAsync(id);
